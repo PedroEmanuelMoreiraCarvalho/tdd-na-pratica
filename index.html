@@ -33,7 +33,6 @@
           diff = diff - (cedules_num) * cedula;
         }
 
-        console.log(troco);
         return troco;
       }
     </script>
@@ -43,6 +42,18 @@
         const trocoCalculado = calcularTroco(1, 1) // Sem troco, apenas um array vazio
         const trocoEsperado = []
         assert.deepEqual(trocoCalculado, trocoEsperado) // 'deepEqual' usado para comparar arrays, veja mais em https://api.qunitjs.com/assert/deepEqual/
+      })
+
+      test('calcularTroco(215, 300) deve retornar [50, 20, 10, 5]', (assert) => {
+        const trocoCalculado = calcularTroco(215, 300) // Esperado um array contendo [50, 20, 10, 5]
+        const trocoEsperado = [50, 20, 10, 5]
+        assert.deepEqual(trocoCalculado, trocoEsperado)
+      })
+
+      test('calcularTroco(486, 600) deve retornar [100, 10, 2, 2]', (assert) => {
+        const trocoCalculado = calcularTroco(486, 600)
+        const trocoEsperado = [100, 10, 2, 2]
+        assert.deepEqual(trocoCalculado, trocoEsperado)
       })
     </script>
 
